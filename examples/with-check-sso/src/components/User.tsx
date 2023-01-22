@@ -8,7 +8,7 @@ const User = () => {
 
   useEffect(() => {
     /* All data keycloak */
-    console.log("keyclaok ", dataKeycloak)
+    console.log("keycloak ", dataKeycloak)
 
     /* Load user profile */
     if(authenticated) {

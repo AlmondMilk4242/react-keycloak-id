@@ -1,6 +1,6 @@
 {
-  "id": "test-keycloak-id",
-  "realm": "test-keycloak-id",
+  "id": "pydantic-keycloack-version-1",
+  "realm": "pydantic-keycloak-version-1.0",
   "displayName": "Test Keycloak",
   "displayNameHtml": "<div class=\"kc-logo-text\"><span>Keycloak</span></div>",
   "notBefore": 1673964385,

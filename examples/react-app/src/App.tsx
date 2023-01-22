@@ -1,6 +1,13 @@
-import React from 'react';
-import { ReactKeycloackIdProvider } from 'react-keycloak-id';
-import User from './components/User';
+import React from 'react'
+import { ReactKeycloackIdProvider } from 'react-keycloak-id'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Preview from './pages/Preview/Preview'
+import Home from './pages/Home/Home'
+import Dashboard from './pages/Dashboard/Dashboard'
+import Navbar from './components/Navbar'
+import Progress from './pages/Progress/Progress'
+import Reports from './pages/Reports/Reports'
+import Insights from './pages/Insights/Insights'
 
 const init = {
   url: process.env.REACT_APP_KEYCLOAK_URL as string,
@@ -10,12 +17,22 @@ const init = {
 
 function App() {
   return (
-    <ReactKeycloackIdProvider init={init}>
-      <React.StrictMode>
-        <User />
-      </React.StrictMode>
-    </ReactKeycloackIdProvider>
-  );
+    <BrowserRouter>
+    <Navbar/>
+      <ReactKeycloackIdProvider init={init}>
+        <React.StrictMode>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/preview" element={<Preview/>} />
+            <Route path="/progress" element={<Progress/>} />
+            <Route path="/reports" element={<Reports/>} />
+            <Route path="/insights" element={<Insights/>} />
+          </Routes>
+        </React.StrictMode>
+      </ReactKeycloackIdProvider>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
